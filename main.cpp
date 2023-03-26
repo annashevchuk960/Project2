@@ -1,27 +1,26 @@
 #include <iostream>
 using namespace std;
-int number(int n);
+
+void cube(int n);
+
 int main()
 {
     int n;
-    cout << "Enter a number: ";
+    cout << "Number in cube: ";
     cin >> n;
-    int result = number(n);
-    cout << "Number " << n << " is " << (result ? "simple" : "not simple") << endl;
+    cout << "Cube  " << n << " = ";
+    cube(n);
+    cout << endl;
     return 0;
 }
 
-int number(int n)
+void cube(int n)
 {
+    for (int i = 1; i * i * i <= n; i++)
     {
-        for (int i = 2; i <= n / 2; ++i) 
+        if (i * i * i == n)
         {
-            if (n % i == 0) 
-            {
-                return false;
-            }
+            cout << i << " ";
         }
-
-        return true;
     }
 }
