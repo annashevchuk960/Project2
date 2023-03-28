@@ -2,26 +2,26 @@
 
 using namespace std;
 
-int number (int n) 
+int factorial(int n)
 {
     if (n <= 1) 
     {
-        return n;
+        return 1;
     }
-    else {
-        return number(n - 1) + number(n - 2);
+    else 
+    {
+        return n * factorial(n - 1);
     }
 }
-
 int main() 
 {
     int n;
-    cout << "Fibonacci: ";
+    cout << "Number: ";
     cin >> n;
-    cout << "Fibonacci sequence up to " << n << ": ";
-    for (int i = 0; i < n; i++) 
+    cout << "Factorial " << n << ": ";
+    for (int i = 0; i <= n; i++) 
     {
-        cout << number(i) << " ";
+        cout << factorial(i) << " ";
     }
     cout << endl;
     return 0;
