@@ -19,10 +19,7 @@ int main()
     cout << "Number: ";
     cin >> n;
     cout << "Factorial " << n << ": ";
-    for (int i = 0; i <= n; i++)
-    {
-        cout << factorial(i) << " ";
-    }
+    cout << factorial(n) << " ";
     cout << endl;
     return 0;
 }
