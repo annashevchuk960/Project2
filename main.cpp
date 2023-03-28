@@ -2,26 +2,31 @@
 
 using namespace std;
 
-int sum(int n)
+double step(double a, int n) 
 {
-    if (n <= 0)
+    if (n == 0) 
     {
-        return 0;
+        return 1;
     }
-    else
+    else if (n % 2 == 0) 
     {
-        return n + sum(n - 1);
+        return step(a * a, n / 2);
+    }
+    else 
+    {
+        return step(a * a, (n - 1) / 2) * a;
     }
 }
 
-int main()
+int main() 
 {
     int n;
-    cout << "Number: ";
+    cout << "Enter a number: ";
     cin >> n;
-    cout << "Sum " << n << ": ";
-    cout << sum(n) << " ";
-    cout << endl;
+    int a;
+    cout << "Enter a step: ";
+    cin >> a;
+    double result = step(a, n);
+    cout << a << " raised to the power of " << n << " is " << result << endl;
     return 0;
 }
-
